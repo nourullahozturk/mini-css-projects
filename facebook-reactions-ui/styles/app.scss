@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+:root {
+  --fb-post-border: #088ae9;
+
+  --fb-post-bg: #262728;
+  --fb-post-color: #ffffff;
+
+  --fb-post: #ffffff;
+
+  --fb-post-btn-bg: #3a3b3c;
+  --fb-post-btn-color: #ffffff;
+  --fb-post-btn-bg-hover: #464849;
+
+  --fb-reactions-bg: #3a3b3c;
+}
+
+body {
+  background-image: url("../assets/thbg.png");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facebook-post {
+  background-color: var(--fb-post-bg);
+  width: 80%;
+  max-width: 500px;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  border: 0.85rem solid var(--fb-post-border);
+  box-shadow: 0 12px 12px rgba(black, 0.15);
+
+  .post-header {
+    display: flex;
+    align-items: center;
+    .user-image {
+      background-color: var(--fb-post);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 1.2rem;
+    }
+    .info-group {
+      color: var(--fb-post);
+      span {
+        display: block;
+        &:last-of-type {
+          font-size: 0.7rem;
+          margin-top: -0.33rem;
+        }
+      }
+    }
+    img {
+      width: 1rem;
+      filter: invert(1);
+      &:first-of-type {
+        margin-left: auto;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .post {
+    margin: 1.5rem auto;
+    width: 100%;
+    height: 350px;
+    background-color: var(--fb-post);
+    border-radius: 1.5rem;
+  }
+
+  .post-interactions {
+    display: flex;
+    gap: 0.25rem;
+    button {
+      position: relative;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: var(--fb-post-btn-bg);
+      color: var(--fb-post-btn-color);
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: var(--fb-post-btn-bg-hover);
+      }
+      .reactions {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        gap: 0.25rem;
+        background-color: var(--fb-reactions-bg);
+        padding: 0.25rem;
+        border-radius: 50px;
+        opacity: 0;
+        pointer-events: none;
+        transition: top 0.3s 0.3s ease, opacity 0.2s 0.3s ease;
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 58px;
+            transition: transform 0.3s ease;
+            &:hover {
+              transform: scale(1.2) translateY(-20px);
+            }
+          }
+        }
+      }
+      &:first-of-type:hover {
+        .reactions {
+          top: -133%;
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+}

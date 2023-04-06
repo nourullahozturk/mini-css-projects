@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+:root {
+  --fb-post-border: #088ae9;
+  --fb-post-bg: #262728;
+  --fb-post-color: #ffffff;
+  --fb-post: #ffffff;
+  --fb-post-btn-bg: #3a3b3c;
+  --fb-post-btn-color: #ffffff;
+  --fb-post-btn-bg-hover: #464849;
+  --fb-reactions-bg: #3a3b3c;
+}
+
+body {
+  background-image: url("../assets/thbg.png");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facebook-post {
+  background-color: var(--fb-post-bg);
+  width: 80%;
+  max-width: 500px;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  border: 0.85rem solid var(--fb-post-border);
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
+}
+.facebook-post .post-header {
+  display: flex;
+  align-items: center;
+}
+.facebook-post .post-header .user-image {
+  background-color: var(--fb-post);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+.facebook-post .post-header .info-group {
+  color: var(--fb-post);
+}
+.facebook-post .post-header .info-group span {
+  display: block;
+}
+.facebook-post .post-header .info-group span:last-of-type {
+  font-size: 0.7rem;
+  margin-top: -0.33rem;
+}
+.facebook-post .post-header img {
+  width: 1rem;
+  filter: invert(1);
+}
+.facebook-post .post-header img:first-of-type {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+.facebook-post .post {
+  margin: 1.5rem auto;
+  width: 100%;
+  height: 350px;
+  background-color: var(--fb-post);
+  border-radius: 1.5rem;
+}
+.facebook-post .post-interactions {
+  display: flex;
+  gap: 0.25rem;
+}
+.facebook-post .post-interactions button {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--fb-post-btn-bg);
+  color: var(--fb-post-btn-color);
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.facebook-post .post-interactions button:hover {
+  background-color: var(--fb-post-btn-bg-hover);
+}
+.facebook-post .post-interactions button .reactions {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  gap: 0.25rem;
+  background-color: var(--fb-reactions-bg);
+  padding: 0.25rem;
+  border-radius: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: top 0.3s 0.3s ease, opacity 0.2s 0.3s ease;
+}
+.facebook-post .post-interactions button .reactions span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.facebook-post .post-interactions button .reactions span img {
+  width: 58px;
+  transition: transform 0.3s ease;
+}
+.facebook-post .post-interactions button .reactions span img:hover {
+  transform: scale(1.2) translateY(-20px);
+}
+.facebook-post .post-interactions button:first-of-type:hover .reactions {
+  top: -133%;
+  opacity: 1;
+  pointer-events: auto;
+}/*# sourceMappingURL=app.css.map */

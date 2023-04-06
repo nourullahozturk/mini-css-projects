@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/app.css" />
+    <title>Facebook Reactions UI</title>
+  </head>
+  <body>
+    <div class="facebook-post">
+      <!-- post header -->
+      <div class="post-header">
+        <div class="user-image"></div>
+        <div class="info-group">
+          <span>John Smith</span>
+          <span>19h</span>
+        </div>
+        <img src="./assets/ellipsis.svg" />
+        <img src="./assets/close.svg" />
+      </div>
+
+      <!-- post -->
+      <div class="post"></div>
+
+      <!-- post interactions -->
+      <div class="post-interactions">
+        <button>
+          Like
+          <div class="reactions">
+            <span><img src="./assets/reactions/like.png" /></span>
+            <span><img src="./assets/reactions/heart.png" /></span>
+            <span><img src="./assets/reactions/wow.png" /></span>
+            <span><img src="./assets/reactions/laugh.png" /></span>
+            <span><img src="./assets/reactions/sad.png" /></span>
+            <span><img src="./assets/reactions/angry.png" /></span>
+          </div>
+        </button>
+        <button>Comment</button>
+        <button>Share</button>
+      </div>
+    </div>
+  </body>
+</html>
